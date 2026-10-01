@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Srush ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg1: #fff8f5;
+            --bg2: #fcecef;
+            --text: #34262b;
+            --muted: #806d73;
+            --accent: #d85b78;
+            --accent-dark: #b94360;
+            --card: rgba(255, 255, 255, 0.78);
+            --shadow: 0 20px 60px rgba(100, 50, 65, 0.14);
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 210, 220, .5), transparent 30%),
+                radial-gradient(circle at 90% 90%, rgba(255, 225, 210, .6), transparent 30%),
+                linear-gradient(135deg, var(--bg1), var(--bg2));
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ---------- FLOATING DECOR ---------- */
+
+        .decor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: .45;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .decor:nth-child(1) {
+            top: 12%;
+            left: 7%;
+            font-size: 22px;
+        }
+
+        .decor:nth-child(2) {
+            top: 24%;
+            right: 8%;
+            font-size: 18px;
+            animation-delay: 2s;
+        }
+
+        .decor:nth-child(3) {
+            bottom: 18%;
+            left: 10%;
+            font-size: 20px;
+            animation-delay: 4s;
+        }
+
+        .decor:nth-child(4) {
+            bottom: 10%;
+            right: 12%;
+            font-size: 25px;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(8deg);
+            }
+        }
+
+        /* ---------- APP ---------- */
+
+        .app {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .screen {
+            min-height: 100vh;
+            width: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 20px 50px;
+        }
+
+        .screen.active {
+            display: flex;
+            animation: screenIn .7s ease forwards;
+        }
+
+        @keyframes screenIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            width: 100%;
+            max-width: 760px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 9vw, 78px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: clamp(30px, 6vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        p {
+            font-size: clamp(17px, 3.5vw, 21px);
+            line-height: 1.7;
+        }
+
+        .small {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        .big-money {
+            font-size: clamp(42px, 10vw, 85px);
+            font-weight: bold;
+            margin: 30px 0;
+            color: #bd4d67;
+            animation: moneyPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes moneyPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.04);
+            }
+        }
+
+        /* ---------- BUTTON ---------- */
+
+        .btn {
+            border: none;
+            background: var(--accent);
+            color: white;
+            padding: 15px 27px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 10px 25px rgba(216, 91, 120, .25);
+            transition: .25s ease;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: var(--accent-dark);
+            box-shadow: 0 14px 30px rgba(216, 91, 120, .3);
+        }
+
+        .btn:active {
+            transform: scale(.97);
+        }
+
+        /* ---------- PHOTO ---------- */
+
+        .photo-wrap {
+            width: min(330px, 82vw);
+            margin: 0 auto 30px;
+            padding: 8px;
+            background: rgba(255, 255, 255, .8);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            transform: rotate(-1.5deg);
+        }
+
+        .photo-wrap img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 18px;
+            display: block;
+        }
+
+        .photo-small {
+            width: min(240px, 70vw);
+        }
+
+        /* ---------- CARDS ---------- */
+
+        .card {
+            background: var(--card);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, .7);
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin: 20px auto;
+            max-width: 620px;
+        }
+
+        .money-card {
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
+
+        .money-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(100, 50, 65, .1);
+            font-size: 15px;
+        }
+
+        .money-row:last-child {
+            border-bottom: none;
+        }
+
+        .money-row strong {
+            text-align: right;
+        }
+
+        .loading-box {
+            margin: 30px auto;
+            max-width: 420px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 12px;
+            background: #f0dce1;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background: var(--accent);
+            border-radius: 20px;
+            transition: width .2s linear;
+        }
+
+        .loading-text {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* ---------- PACKAGE ---------- */
+
+        .package {
+            display: grid;
+            gap: 12px;
+            max-width: 570px;
+            margin: 25px auto;
+        }
+
+        .package-item {
+            background: rgba(255, 255, 255, .7);
+            border-radius: 17px;
+            padding: 15px 18px;
+            text-align: left;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 5px 20px rgba(80, 40, 50, .06);
+        }
+
+        /* ---------- ROAST ---------- */
+
+        .roast-card {
+            max-width: 560px;
+            margin: auto;
+        }
+
+        .roast-line {
+            padding: 15px;
+            font-size: 19px;
+            line-height: 1.5;
+        }
+
+        .roast-line:not(:last-child) {
+            border-bottom: 1px dashed rgba(120, 70, 80, .2);
+        }
+
+        /* ---------- QUOTE ---------- */
+
+        .heart-text {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .heart-text p {
+            margin-bottom: 22px;
+        }
+
+        /* ---------- FINAL ---------- */
+
+        .final {
+            min-height: 100vh;
+        }
+
+        .final-heart {
+            font-size: 70px;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.12);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 19px;
+        }
+
+        .ps {
+            margin-top: 45px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .financial {
+            margin-top: 8px;
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--accent-dark);
+        }
+
+        /* ---------- PROGRESS ---------- */
+
+        .progress-dots {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(150, 100, 110, .25);
+            transition: .3s;
+        }
+
+        .dot.active {
+            width: 22px;
+            border-radius: 10px;
+            background: var(--accent);
+        }
+
+        /* ---------- CONFETTI ---------- */
+
+        .confetti {
+            position: fixed;
+            top: -20px;
+            width: 8px;
+            height: 14px;
+            z-index: 50;
+            animation: fall linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 600px) {
+            .screen {
+                padding: 65px 18px 35px;
+            }
+
+            .card {
+                padding: 23px 18px;
+                border-radius: 22px;
+            }
+
+            .money-row {
+                font-size: 13px;
+            }
+
+            .package-item {
+                font-size: 14px;
+            }
+
+            .btn {
+                width: auto;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+========================================================
+EASY SETTINGS
+========================================================
+Change these if you want.
+========================================================
+-->
+
+    <script>
+        const SETTINGS = {
+            atharvName: "Atharv",
+
+            srushPhoto1: "srush1.jpg",
+            srushPhoto2: "srush2.jpg",
+
+            jokeMoney: "₹47"
+        };
+    </script>
+
+    <!-- FLOATING DECOR -->
+    <div class="decor">♡</div>
+    <div class="decor">✦</div>
+    <div class="decor">♡</div>
+    <div class="decor">✦</div>
+
+    <!-- PROGRESS -->
+    <div class="progress-dots" id="dots"></div>
+
+    <main class="app">
+
+        <!-- ==================================================
+     SCREEN 0 — OPENING
+================================================== -->
+
+        <section class="screen active" id="screen0">
+            <div class="content">
+
+                <div class="eyebrow">A little something for you</div>
+
+                <h1>Hey Srush ❤️</h1>
+
+                <p>
+                    I made something for you.
+                    <br><br>
+                    Don't worry, it's not as complicated as you think 😭
+                    <br><br>
+                    And yes...
+                    <br>
+                    I know what you want for your birthday. 👀💸
+                </p>
+
+                <button class="btn" onclick="nextScreen()">
+                    Open my gift 👀
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     SCREEN 1 — BIRTHDAY GIRL
+================================================== -->
+
+        <section class="screen" id="screen1">
+            <div class="content">
+
+                <div class="photo-wrap">
+                    <img id="photo1" src="srush1.jpg" alt="Srush">
+                </div>
+                <div
+                    style="font-size:11px; line-height:1.5; opacity:0.7; margin-bottom:15px; max-width:450px; margin-left:auto; margin-right:auto;">
+                    <strong>🚨 Small note 😂</strong><br>
+                    Don't judge the photos okay? 😭<br>
+                    I had to steal some from your Snapchat because I didn't have enough good ones saved. 😂<br>
+                     <strong>Send me some better ones </strong>and I can make this look WAYYYY better. 👀❤️
+                </div>
+
+                <div class="eyebrow">Birthday girl alert 🎂</div>
+
+                <h2>
+                    Okay...
+                </h2>
+
+                <p>
+                    Today you're officially not allowed to say:
+                    <br>
+                    <strong>“It's just another birthday.”</strong>
+                    <br><br>
+                    Because it's YOUR birthday.
+                </p>
+
+                <p style="margin-top:25px;">
+                    And apparently...
+                    <br>
+                    your birthday demand is...
+                </p>
+
+                <div class="big-money">
+                    UNLIMITED MONEY 💸
+                </div>
+
+                <button class="btn" onclick="nextScreen()">
+                    Check your gift 😂
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     SCREEN 2 — MONEY GIFT
+================================================== -->
+
+        <section class="screen" id="screen2">
+            <div class="content">
+
+                <div class="eyebrow">Official birthday department</div>
+
+                <h2>Srush's Official Gift 🎁</h2>
+
+                <div class="card money-card">
+
+                    <div class="money-row">
+                        <span>Recipient</span>
+                        <strong>Srush</strong>
+                    </div>
+
+                    <div class="money-row">
+                        <span>Gift</span>
+                        <strong>Unlimited Money 💸</strong>
+                    </div>
+
+                    <div class="money-row">
+                        <span>Amount</span>
+                        <strong>₹∞</strong>
+                    </div>
+
+                    <div class="money-row">
+                        <span>Reason</span>
+                        <strong>“Because it's my birthday.”</strong>
+                    </div>
+
+                    <div class="money-row">
+                        <span>Approved by</span>
+                        <strong>Atharv</strong>
+                    </div>
+
+                </div>
+
+                <div class="loading-box">
+
+                    <p class="loading-text" id="loadingText">
+                        Calculating unlimited money...
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-bar" id="moneyProgress"></div>
+                    </div>
+
+                    <p class="loading-text" id="percentage">
+                        0%
+                    </p>
+
+                </div>
+
+                <div id="failedMessage" style="display:none;">
+
+                    <div class="big-money">
+                        FAILED 😭
+                    </div>
+
+                    <p>
+                        I'm sorry.
+                        <br><br>
+                        I checked.
+                        <br>
+                        My bank account said absolutely not. 😭
+                    </p>
+
+                    <button class="btn" onclick="nextScreen()">
+                        I have a backup gift ❤️
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     SCREEN 3 — BACKUP GIFT
+================================================== -->
+
+        <section class="screen" id="screen3">
+            <div class="content">
+
+                <div class="eyebrow">Plan B 😂</div>
+
+                <h2>Your Unlimited Birthday Package</h2>
+
+                <div class="package">
+
+                    <div class="package-item">
+                        💸 Unlimited money — <strong>unfortunately unavailable</strong>
+                    </div>
+
+                    <div class="package-item">
+                        😂 Unlimited bakchodi — <strong>ACTIVATED</strong>
+                    </div>
+
+                    <div class="package-item">
+                        📱 Unlimited reel reactions — <strong>ACTIVATED</strong>
+                    </div>
+
+                    <div class="package-item">
+                        🤣 Unlimited laughing at your nonsense — <strong>ACTIVATED</strong>
+                    </div>
+
+                    <div class="package-item">
+                        🫶 Unlimited support — <strong>ACTIVATED</strong>
+                    </div>
+
+                    <div class="package-item">
+                        ✨ Unlimited memories — <strong>COMING SOON</strong>
+                    </div>
+
+                    <div class="package-item">
+                        ❤️ One Atharv — <strong>NON-REFUNDABLE</strong>
+                    </div>
+
+                </div>
+
+                <p>
+                    Honestly...
+                    <br>
+                    not a bad deal. 😂
+                </p>
+
+                <button class="btn" onclick="nextScreen()">
+                    Okay... continue 👀
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     SCREEN 4 — OUR VIBE
+================================================== -->
+
+        <section class="screen" id="screen4">
+            <div class="content">
+
+                <div class="photo-wrap photo-small">
+                    <img id="photo2" src="srush2.jpg" alt="Srush">
+                </div>
+
+                <div class="eyebrow">Okay, serious for a minute</div>
+
+                <h2>Our Vibe 🫶</h2>
+
+                <div class="heart-text">
+
+            <p>
+    You know how some people can make a completely 
+    normal conversation somehow become funny?
+</p>
+
+<p>
+    We...
+</p>
+
+<p>
+    Although, if I'm being honest... 🥲
+    <br>
+    Sometimes I feel like I'm annoying you with my messages
+   
+</p>
+
+<p>
+    Maybe I'm just overthinking it...
+    <br>
+    but sometimes it feels like I'm the one who wants
+    to keep talking, while you're just replying because you have to.
+    <br>
+    
+</p>
+
+<p>
+    
+</p>
+
+                </div>
+
+                <button class="btn" onclick="nextScreen()">
+                    Continue 👀
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     SCREEN 5 — ROAST
+================================================== -->
+
+        <section class="screen" id="screen5">
+            <div class="content">
+
+                <div class="eyebrow">Important birthday announcement 🚨</div>
+
+                <h2>A Little Roast 😂</h2>
+
+                <div class="card roast-card">
+
+                    <div class="roast-line">
+                        Srush is officially one year older.
+                    </div>
+
+                    <div class="roast-line">
+                        Unfortunately, maturity is still loading... 😭
+                    </div>
+
+                    <div class="roast-line">
+                        Still waiting for the update.
+                    </div>
+
+                    <div class="roast-line">
+                        And yes, your demand for unlimited money
+                        has been officially recorded.
+                    </div>
+
+                    <div class="roast-line">
+                        My Personal Assitant will get back to you within
+                        3–5 business years. 😂
+                    </div>
+
+                </div>
+
+                <button class="btn" onclick="nextScreen()">
+                    Okay okay, enough 😂
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     SCREEN 6 — REAL PART
+================================================== -->
+
+        <section class="screen" id="screen6">
+            <div class="content">
+
+                <div class="photo-wrap photo-small">
+                    <img src=srush1.jpg alt="Srush">
+                </div>
+
+                <div class="eyebrow">Enough bakchodi ❤️</div>
+
+                <h2>Jokes apart...</h2>
+
+                <div class="heart-text">
+
+                    <p>
+                        I'm genuinely lucky that you're my friend
+                    </p>
+
+                    <p>
+                        Some people become important without even trying.
+                    </p>
+
+                    <p>
+                        You somehow became one of those people for me.
+                    </p>
+
+                    <p>
+                        And honestly...
+                        <br>
+                        I hope we stay this close for a really,
+                        really long time.
+                    </p>
+
+                </div>
+
+                <button class="btn" onclick="nextScreen()">
+                    There's something else ❤️
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     SCREEN 7 — HIDDEN MESSAGE
+================================================== -->
+
+        <section class="screen" id="screen7">
+            <div class="content">
+
+                <div class="eyebrow">Something I never properly said</div>
+
+                <h2>There's one thing...</h2>
+
+                <p>
+                    I've never properly said this.
+                </p>
+
+                <button class="btn" id="openMessageBtn" onclick="openMessage()">
+                    Open it
+                </button>
+
+                <div id="hiddenMessage" style="display:none; margin-top:40px;">
+
+                    <div class="heart-text">
+
+                        <p>
+                            Among all the people I know,
+                            you're one of the very few people
+                            whose presence can genuinely make my day better.
+                        </p>
+
+                        
+
+                    </div>
+
+                    <div class="signature">
+                        — Atharv
+                    </div>
+                    <p style="margin-top:25px; font-size:18px;">
+                        P.S. — I was going to say something very serious here...
+                        <br>
+                        <strong>Keep sending reels on insta😭❤️
+                            You're way too special to me...
+                            definitely more than just a friend. 👀❤️🫶
+                        </strong>
+                        <br>
+                        Don't make it awkward now. 😭
+                    </p>
+
+                    <button class="btn" onclick="nextScreen()">
+                        One more thing 🎂
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     SCREEN 8 — BIRTHDAY WISH
+================================================== -->
+
+        <section class="screen" id="screen8">
+            <div class="content">
+
+                <div class="photo-wrap">
+                    <img src="srush2.jpg" alt="Srush">
+                </div>
+
+                <div class="eyebrow">The actual birthday wish 🎂</div>
+
+                <h2>Happy Birthday, Srush ❤️</h2>
+
+                <div class="heart-text">
+
+                    <p>
+                        I hope this year gives you everything
+                        you've been wishing for,
+                    </p>
+
+                    <p>
+                        a lot of reasons to smile,
+                        people who genuinely care about you(Jaise ki Mai😂),
+                        and moments you'll remember for a long time.
+                    </p>
+
+                    <p>
+                        And yes...
+                    </p>
+
+                    <p>
+                        I hope your dream of becoming
+                        rich comes true too. 💸😂
+                    </p>
+
+                    <p>
+                        Because apparently that's the actual
+                        birthday goal.
+                    </p>
+
+                    <p>
+                        Stay exactly the way you are.
+                    </p>
+
+                    <p>
+                        You're pretty special❤️, you know.
+                    </p>
+
+                </div>
+
+                <button class="btn" onclick="nextScreen()">
+                    One last thing... ❤️
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+     FINAL SCREEN
+================================================== -->
+
+        <section class="screen final" id="screen9">
+            <div class="content">
+
+                <div class="final-heart">❤️</div>
+
+                <div class="eyebrow">Okay fine...</div>
+
+                <h2>One Last Thing</h2>
+
+                <div class="heart-text">
+
+                    <p>
+                        I could've just said:
+                    </p>
+
+                    <p>
+                        <strong>“Happy Birthday ❤️”</strong>
+                    </p>
+
+                    <p>
+                        But you're not just a normal friend to me,
+                        Yor r very special friend to me-
+                        so a normal birthday wish felt a little unfair.
+                    </p>
+
+                    <p>
+                        I couldn't give you unlimited money...😂
+                    </p>
+
+                    <p>
+                        but I can give you something better:
+                    </p>
+
+                    <p>
+                        someone who's always going to be happy
+                        to see you happy.
+                    </p>
+
+                </div>
+
+                <h2 style="margin-top:35px;">
+                    Happy Birthday, Srush ❤️
+                </h2>
+
+                <div class="signature">
+
+                    From your best friend,
+                    <br>
+                    your occasional headache,
+                    <br>
+                    your personal reel-watcher,
+                    <br>
+                    and someone who cares about you
+                    a little more than he probably admits.
+                    <br>
+                    
+                    <br><br>
+                    — Atharv ❤️
+
+                </div>
+
+                <div class="ps">
+                    P.S. — If you still want the unlimited money,
+                    please contact my financial advisor.
+                </div>
+
+                <div class="financial">
+                    I am the financial advisor.
+                    <br>
+                    I have ₹47. 😭💸
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <script>
+
+        /* =====================================================
+           SETTINGS
+        ===================================================== */
+
+        const totalScreens = 10;
+        let currentScreen = 0;
+
+
+        /* =====================================================
+           APPLY SETTINGS
+        ===================================================== */
+
+        document.getElementById("photo1").src = SETTINGS.srushPhoto1;
+        document.getElementById("photo2").src = SETTINGS.srushPhoto2;
+
+
+        /* =====================================================
+           CREATE PROGRESS DOTS
+        ===================================================== */
+
+        const dotsContainer = document.getElementById("dots");
+
+        for (let i = 0; i < totalScreens; i++) {
+
+            const dot = document.createElement("div");
+
+            dot.className = "dot";
+
+            if (i === 0) {
+                dot.classList.add("active");
+            }
+
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll(".dot");
+
+
+        /* =====================================================
+           SHOW SCREEN
+        ===================================================== */
+
+        function showScreen(number) {
+
+            document.querySelectorAll(".screen").forEach(screen => {
+                screen.classList.remove("active");
+            });
+
+            const selected = document.getElementById("screen" + number);
+
+            if (selected) {
+                selected.classList.add("active");
+            }
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === number);
+            });
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            currentScreen = number;
+
+            if (number === 2) {
+                startMoneyAnimation();
+            }
+
+            if (number === 9) {
+                startConfetti();
+            }
+        }
+
+
+        /* =====================================================
+           NEXT SCREEN
+        ===================================================== */
+
+        function nextScreen() {
+
+            if (currentScreen < totalScreens - 1) {
+                showScreen(currentScreen + 1);
+            }
+
+        }
+
+
+        /* =====================================================
+           MONEY LOADING ANIMATION
+        ===================================================== */
+
+        let moneyStarted = false;
+
+        function startMoneyAnimation() {
+
+            if (moneyStarted) return;
+
+            moneyStarted = true;
+
+            const bar = document.getElementById("moneyProgress");
+            const percentage = document.getElementById("percentage");
+            const loadingText = document.getElementById("loadingText");
+            const failed = document.getElementById("failedMessage");
+
+            let progress = 0;
+
+            const interval = setInterval(() => {
+
+                progress += Math.floor(Math.random() * 5) + 1;
+
+                if (progress >= 100) {
+                    progress = 100;
+                }
+
+                bar.style.width = progress + "%";
+                percentage.textContent = progress + "%";
+
+                if (progress < 30) {
+                    loadingText.textContent =
+                        "Checking Atharv's bank balance...";
+                }
+                else if (progress < 60) {
+                    loadingText.textContent =
+                        "Searching for unlimited money...";
+                }
+                else if (progress < 90) {
+                    loadingText.textContent =
+                        "Calling financial department...";
+                }
+                else if (progress < 100) {
+                    loadingText.textContent =
+                        "Making one last attempt...";
+                }
+
+                if (progress >= 100) {
+
+                    clearInterval(interval);
+
+                    setTimeout(() => {
+
+                        loadingText.textContent =
+                            "Financial department has responded.";
+
+                        percentage.textContent = "ERROR 😭";
+
+                        setTimeout(() => {
+
+                            failed.style.display = "block";
+
+                        }, 700);
+
+                    }, 600);
+                }
+
+            }, 160);
+
+        }
+
+
+        /* =====================================================
+           HIDDEN MESSAGE
+        ===================================================== */
+
+        function openMessage() {
+
+            const message = document.getElementById("hiddenMessage");
+            const button = document.getElementById("openMessageBtn");
+
+            button.style.display = "none";
+
+            message.style.display = "block";
+
+        }
+
+
+        /* =====================================================
+           CONFETTI
+        ===================================================== */
+
+        function startConfetti() {
+
+            const symbols = ["❤️", "✨", "♡", "🎉", "💗", "✦"];
+
+            for (let i = 0; i < 65; i++) {
+
+                const piece = document.createElement("div");
+
+                piece.className = "confetti";
+
+                piece.textContent =
+                    symbols[Math.floor(Math.random() * symbols.length)];
+
+                piece.style.left =
+                    Math.random() * 100 + "vw";
+
+                piece.style.fontSize =
+                    (10 + Math.random() * 14) + "px";
+
+                piece.style.animationDuration =
+                    (3 + Math.random() * 4) + "s";
+
+                piece.style.animationDelay =
+                    Math.random() * 1.5 + "s";
+
+                document.body.appendChild(piece);
+
+                setTimeout(() => {
+                    piece.remove();
+                }, 8000);
+            }
+        }
+
+
+        /* =====================================================
+           KEYBOARD SUPPORT
+        ===================================================== */
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "ArrowRight" || event.key === "Enter") {
+
+                if (currentScreen !== 2 && currentScreen !== 7) {
+                    nextScreen();
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
